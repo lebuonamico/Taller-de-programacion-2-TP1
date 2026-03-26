@@ -6,8 +6,15 @@
  * @returns {number[]} array de numeros
  */
 function transformarStringEnArrayDeNumeros(str, separador) {
+    const arrayStrings = str.split(separador)
+    const arrayNumeros = []
+    for (const element of arrayStrings) {
+        if(element.length > 0 && !isNaN(element))
+            arrayNumeros.push(Number(element))
+    }
+    return arrayNumeros
 }
-
+ 
 /**
  * concatena todos los numeros entre sí, intercalando un separador entre número y número.
  * @param {number[]} arr 
@@ -15,6 +22,11 @@ function transformarStringEnArrayDeNumeros(str, separador) {
  * @returns {string} el nuevo string
  */
 function transformarArrayDeNumerosAUnSoloString(arr, separador) {
+    return arr.join(separador);
 }
 
 // exportar ambas funciones
+export default {
+    transformarStringEnArrayDeNumeros,
+    transformarArrayDeNumerosAUnSoloString
+}
