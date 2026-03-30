@@ -16,7 +16,7 @@ function testTransformarStringEnArrayDeNumeros() {
     const arrNumeros = transformUtils.transformarStringEnArrayDeNumeros(str, separador)
     const arrEsperado = [1, 2, 3, 4, 5, 6]
 
-    if (typeof arrNumeros === 'object' && arraysIguales(arrNumeros, arrEsperado)) {
+    if (typeof arrNumeros === 'object' && util.arraysIguales(arrNumeros, arrEsperado)) {
         util.printOk("TEST OK");
     } else {
         util.printError("ERROR");
@@ -38,22 +38,6 @@ function testTransformarArrayDeNumerosAUnSoloString() {
     }
     util.separador()
 }
-function arraysIguales(a, b) {
-    let iguales = true
 
-    if (a.length !== b.length) {
-        iguales = false
-    } else {
-        let i = 0
-        while (i < a.length && iguales) {
-            if (a[i] !== b[i]) {
-                iguales = false
-            }
-            i++
-        }
-    }
-
-    return iguales
-}
 
 export default { runAll }
